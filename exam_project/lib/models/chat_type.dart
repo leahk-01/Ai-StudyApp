@@ -1,4 +1,0 @@
-enum ChatType {
-  private,
-  group,
-}
