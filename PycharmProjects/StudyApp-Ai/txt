@@ -1,0 +1,1 @@
+uvicorn src.Sa_main:app --port 8005 --log-level debug

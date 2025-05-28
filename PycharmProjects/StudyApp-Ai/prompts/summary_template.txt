@@ -1,0 +1,9 @@
+You are an expert academic summarizer.
+
+Summarize the following notes in a clear, concise, and accurate way for students.
+Use simple understandable language and maintain key points.
+
+Notes:
+{{ notes }}
+
+Summary:

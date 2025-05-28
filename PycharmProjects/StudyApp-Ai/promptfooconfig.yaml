@@ -1,0 +1,23 @@
+prompts:
+  - file://prompts/notes_template.txt
+  - file://prompts/summary_template.txt
+  - file://prompts/quiz_template.txt
+
+providers:
+  - id: ollama:chat:gemma:2b
+
+#  test cases—one “vars” block per example input
+tests:
+  # Notes tests
+  - vars:
+      topic: "Photosynthesis in plants"
+  - vars:
+      topic: "Newton’s laws of motion"
+
+  # Summarization tests
+  - vars:
+      notes: "1. What Is Calculus?\nCalculus is the branch of mathematics focused on change and accumulation. It is divided into:\n- Differential Calculus: Rates of change (derivatives).\n- Integral Calculus: Accumulation of quantities (integrals).\n\n2. Limits and Continuity\nLimit: The value that a function approaches as the input approaches a point.\nContinuity: A function is continuous at x = a if:\n 1. f(a) is defined\n 2. Limit exists\n 3. Limit equals f(a).\n\n3. Differentiation (Derivatives)\nDefinition: Derivative gives rate of change or slope at a point.\nBasic Rules:\n - Power Rule: d/dx[x^n] = nx^(n-1)\n - Constant Rule: d/dx[c] = 0\n - Sum Rule: d/dx[f+g] = f'+g'\n - Product Rule: (fg)' = f'g + fg'\n - Quotient Rule: (f/g)' = (f'g - fg')/g^2\n - Chain Rule: d/dx[f(g(x))] = f'(g(x)) * g'(x)\n\n4. Integration (Antiderivatives)\nDefinition: Integration is the inverse of differentiation.\nBasic Rules:\n - Power Rule: ∫x^n dx = x^(n+1)/(n+1) + C, n != -1\n - Constant Rule: ∫c dx = cx + C\n - Sum Rule: ∫(f + g) dx = ∫f dx + ∫g dx\nDefinite Integral: ∫_a^b f(x) dx gives area under the curve from a to b.\n\n5. Fundamental Theorem of Calculus\nConnects differentiation and integration:\nPart 1: d/dx[∫_a^x f(t) dt] = f(x)\nPart 2: ∫_a^b f(x) dx = F(b) - F(a), where F is an antiderivative of f.\n\n6. Applications of Calculus\n- Physics: motion, velocity, acceleration\n- Economics: marginal cost, profit\n- Biology: population models\n- Engineering: signal processing, fluid flow\n- Optimization: maximizing/minimizing real-world functions"
+  # Quiz tests
+  - vars:
+      context: "1. What Is Probability?\nProbability is a branch of mathematics concerned with the likelihood of events occurring. It ranges from 0 (impossible) to 1 (certain).\n\n2. Basic Terminology:\n- Experiment: An action with uncertain outcomes (e.g., rolling a die).\n- Sample Space (S): The set of all possible outcomes.\n- Event (E): A subset of the sample space.\n\n3. Classical Probability:\nP(E) = Number of favorable outcomes / Total number of outcomes\nExample: P(rolling a 3 on a die) = 1/6\n\n4. Types of Events:\n- Independent Events: One event does not affect the other.\n- Dependent Events: One event influences the other.\n- Mutually Exclusive: Events that cannot occur together.\n\n5. Rules of Probability:\n- P(S) = 1\n- 0 ≤ P(E) ≤ 1\n- P(E or F) = P(E) + P(F) - P(E and F)\n- For independent E and F: P(E and F) = P(E) × P(F)\n\n6. Conditional Probability:\nP(A|B) = P(A and B) / P(B)\nThis is the probability of A given that B has occurred.\n\n7. Applications of Probability:\n- Statistics and data analysis\n- Game theory and gambling\n- Risk assessment in insurance and finance\n- AI and machine learning models\n- Genetics and population studies"
+      num_questions: 4
